@@ -1,0 +1,124 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e1e;
+            margin: 0;
+        }
+        .calculator {
+            width: 320px;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .display {
+            width: 95%;
+            height: 70px;
+            background: #222;
+            color: white;
+            font-size: 28px;
+            text-align: right;
+            padding: 9px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        button {
+            height: 70px;
+            font-size: 22px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #444;
+            color: white;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #666;
+        }
+        .operator {
+            background: #ff9500;
+        }
+        .operator:hover {
+            background: #e08900;
+        }
+        .equals {
+            background: #28a745;
+        }
+        .equals:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="backspace()">⌫</button>
+            <button onclick="appendOperator('%')">%</button>
+            <button class="operator" onclick="appendOperator('/')">÷</button>
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button class="operator" onclick="appendOperator('*')">×</button>
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+            <button class="operator" onclick="appendOperator('-')">−</button>
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+            <button onclick="appendNumber(0)" style="grid-column: span 2;">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById("display");
+
+        function clearDisplay() {
+            display.innerText = "0";
+        }
+
+        function backspace() {
+            display.innerText = display.innerText.slice(0, -1) || "0";
+        }
+
+        function appendNumber(num) {
+            if (display.innerText === "0") display.innerText = "";
+            display.innerText += num;
+        }
+
+        function appendOperator(op) {
+            if (!/[+\-*/%]$/.test(display.innerText)) {
+                display.innerText += op;
+            }
+        }
+
+        function calculateResult() {
+            try {
+                display.innerText = eval(display.innerText) || "0";
+            } catch {
+                display.innerText = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
