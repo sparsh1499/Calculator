@@ -1,5 +1,3 @@
-Here's your complete **README.md** file for the calculator project:
-
 ```markdown
 # Modern Calculator 🧮
 
@@ -15,7 +13,7 @@ A sleek and user-friendly web-based calculator built with HTML, CSS, and JavaScr
 🔗 [Calculator - GitHub Pages](https://sparsh1499.github.io/Calculator/)
 
 ## Screenshots 📸
-![Calculator Screenshot] ![Image](https://github.com/user-attachments/assets/6e277a46-18cf-430f-b313-c620972887bc)
+![Image](https://github.com/user-attachments/assets/6e277a46-18cf-430f-b313-c620972887bc)
 
 ## Technologies Used 🛠️
 - HTML5
