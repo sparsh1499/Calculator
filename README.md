@@ -12,9 +12,6 @@ A sleek and user-friendly web-based calculator built with HTML, CSS, and JavaScr
 ## Live Demo 🚀
 🔗 [Calculator - GitHub Pages](https://sparsh1499.github.io/Calculator/)
 
-## Screenshots 📸
-![https://github.com/user-attachments/assets/6e277a46-18cf-430f-b313-c620972887bc]
-
 ## Technologies Used 🛠️
 - HTML5
 - CSS3
